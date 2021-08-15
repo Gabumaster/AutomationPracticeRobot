@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1 (Python 3.9.6 on win32)" generated="20210815 01:59:14.909" rpa="false" schemaversion="2">
+<suite id="s1" name="Busca" source="C:\Automação MV\automationpractice\3-testes\busca.robot">
+<test id="s1-t1" name="Realizar busca">
+<kw name="Abrir navegador" library="config" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210815 01:59:18.334" level="INFO">Opening browser 'Chrome' to base url 'http://automationpractice.com/index.php'.</msg>
+<status status="PASS" starttime="20210815 01:59:18.333" endtime="20210815 01:59:24.600"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210815 01:59:24.600" endtime="20210815 01:59:24.786"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210815 01:59:25.785" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210815 01:59:24.786" endtime="20210815 01:59:25.785"/>
+</kw>
+<status status="PASS" starttime="20210815 01:59:18.332" endtime="20210815 01:59:25.786"/>
+</kw>
+<kw name="E pesquisa por produto &quot;shoes&quot;" library="busca_steps" sourcename="E pesquisa por produto &quot;${produto}&quot;">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${InputCampoBusca}</arg>
+<arg>${produto}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210815 01:59:25.789" level="INFO">Typing text 'shoes' into text field 'id=search_query_top'.</msg>
+<status status="PASS" starttime="20210815 01:59:25.788" endtime="20210815 01:59:26.029"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${ButtonPesquisa}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210815 01:59:26.030" level="INFO">Clicking button 'name=submit_search'.</msg>
+<status status="PASS" starttime="20210815 01:59:26.029" endtime="20210815 01:59:27.647"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210815 01:59:27.978" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210815 01:59:27.647" endtime="20210815 01:59:27.979"/>
+</kw>
+<status status="PASS" starttime="20210815 01:59:25.787" endtime="20210815 01:59:27.979"/>
+</kw>
+<kw name="Então traz os resultados relacionado a pesquisa" library="busca_steps">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${ClassTituloBusca}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210815 01:59:27.982" endtime="20210815 01:59:28.034"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${ClassTituloBusca}</arg>
+<arg>"SHOES"</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20210815 01:59:28.035" level="INFO">Verifying element 'class=lighter' contains exact text '"SHOES"'.</msg>
+<status status="PASS" starttime="20210815 01:59:28.035" endtime="20210815 01:59:28.064"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210815 01:59:28.369" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210815 01:59:28.064" endtime="20210815 01:59:28.370"/>
+</kw>
+<status status="PASS" starttime="20210815 01:59:27.980" endtime="20210815 01:59:28.370"/>
+</kw>
+<kw name="Fechar navegador" library="config" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210815 01:59:28.372" endtime="20210815 01:59:31.254"/>
+</kw>
+<status status="PASS" starttime="20210815 01:59:28.371" endtime="20210815 01:59:31.255"/>
+</kw>
+<kw name="Stop Recording Test" library="AutoRecorder">
+<arg>Realizar busca</arg>
+<doc>There is no need to execute this keyword manually.
+Basically - alias for https://mihaiparvu.github.io/ScreenCapLibrary/ScreenCapLibrary.html#Stop%20Video%20Recording</doc>
+<msg timestamp="20210815 01:59:31.502" level="INFO" html="true">&lt;a href="recording_1.webm"&gt;&lt;video width="800px" autoplay&gt;&lt;source src="recording_1.webm" type="video/webm"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210815 01:59:31.271" endtime="20210815 01:59:31.502"/>
+</kw>
+<status status="PASS" starttime="20210815 01:59:15.857" endtime="20210815 01:59:31.269"/>
+</test>
+<status status="PASS" starttime="20210815 01:59:14.913" endtime="20210815 01:59:31.506"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Busca">Busca</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
